@@ -166,6 +166,16 @@ function App() {
   const [searchError, setSearchError] = useState("");
   const [unit, setUnit] = useState("C");
   const [refreshKey, setRefreshKey] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => localStorage.getItem("weather-by-celestine-theme") === "dark"
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "weather-by-celestine-theme",
+      isDarkMode ? "dark" : "light"
+    );
+  }, [isDarkMode]);
 
   useEffect(() => {
     let isCurrent = true;
@@ -281,7 +291,7 @@ function App() {
   const now = new Date();
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${isDarkMode ? "theme-dark" : "theme-light"}`}>
       <aside className="sidebar">
         <a className="brand" href="#overview" aria-label="Weather by Celestine home">
           <span className="brand-mark">w</span>
@@ -337,6 +347,18 @@ function App() {
             <span className="top-date">
               {formatDate(now, { weekday: "short", month: "short", day: "numeric" })}
             </span>
+            <button
+              className="theme-toggle"
+              onClick={() => setIsDarkMode((darkMode) => !darkMode)}
+              aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+              aria-pressed={isDarkMode}
+              title={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            >
+              <span aria-hidden="true">{isDarkMode ? "☀" : "☾"}</span>
+              <span className="theme-toggle-label">
+                {isDarkMode ? "Light" : "Dark"}
+              </span>
+            </button>
             <button
               className="unit-toggle"
               onClick={() => setUnit((currentUnit) => currentUnit === "C" ? "F" : "C")}

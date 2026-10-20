@@ -238,6 +238,36 @@
   cursor: pointer;
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid #e5ecea;
+  border-radius: 20px;
+  background: #fff;
+  color: #607174;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .18s, border-color .18s, color .18s;
+}
+
+.theme-toggle:hover {
+  border-color: #b7d9d2;
+  color: #188d7e;
+}
+
+.theme-toggle > span:first-child {
+  color: #268f82;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.theme-toggle-label {
+  font-size: 10px;
+  font-weight: 600;
+}
+
 .toggle-track {
   display: flex;
   width: 25px;
@@ -972,6 +1002,200 @@ h2 {
   display: none;
 }
 
+.app-shell {
+  background: #f4f7f7;
+  color: #18262e;
+  color-scheme: light;
+  transition: background-color .2s, color .2s;
+}
+
+.app-shell.theme-dark {
+  background: #11191d;
+  color: #e1e9e8;
+  color-scheme: dark;
+}
+
+.theme-dark .sidebar {
+  background: #182226;
+  border-right-color: #2b393d;
+}
+
+.theme-dark .brand,
+.theme-dark .mobile-brand {
+  color: #e0e9e7;
+}
+
+.theme-dark .sidebar-label,
+.theme-dark .eyebrow {
+  color: #87999a;
+}
+
+.theme-dark .nav-item,
+.theme-dark .location-item {
+  color: #a4b2b2;
+}
+
+.theme-dark .nav-item:hover,
+.theme-dark .location-item:hover {
+  background: #202f33;
+  color: #edf4f2;
+}
+
+.theme-dark .nav-item.active {
+  background: #203b38;
+  color: #77d2bd;
+}
+
+.theme-dark .active .nav-symbol,
+.theme-dark .location-item.selected {
+  color: #77d2bd;
+}
+
+.theme-dark .nav-symbol {
+  color: #91a3a3;
+}
+
+.theme-dark .sidebar-bottom {
+  border-top-color: #2b393d;
+}
+
+.theme-dark .source-chip {
+  color: #a6c3bc;
+}
+
+.theme-dark .sidebar-bottom p {
+  color: #91a09f;
+}
+
+.theme-dark .topbar {
+  border-bottom-color: #2a383c;
+}
+
+.theme-dark .breadcrumb,
+.theme-dark .top-date {
+  color: #9aa9aa;
+}
+
+.theme-dark .breadcrumb span {
+  color: #617174;
+}
+
+.theme-dark .unit-toggle,
+.theme-dark .theme-toggle,
+.theme-dark .search-form,
+.theme-dark .refresh-button {
+  border-color: #344447;
+  background: #1a262a;
+  color: #c0cecc;
+}
+
+.theme-dark .theme-toggle:hover,
+.theme-dark .refresh-button:hover:not(:disabled) {
+  border-color: #4a766d;
+  color: #8bdac7;
+}
+
+.theme-dark .theme-toggle > span:first-child {
+  color: #f3cd77;
+}
+
+.theme-dark .page-heading h1,
+.theme-dark .section-heading h2,
+.theme-dark .card-heading h2 {
+  color: #e4ecea;
+}
+
+.theme-dark .heading-copy,
+.theme-dark .section-subtitle {
+  color: #9aa8a8;
+}
+
+.theme-dark .search-form input {
+  color: #e1e9e8;
+}
+
+.theme-dark .search-form input::placeholder {
+  color: #8d9c9d;
+}
+
+.theme-dark .search-icon {
+  color: #a0b0ae;
+}
+
+.theme-dark .conditions-card,
+.theme-dark .hourly-card,
+.theme-dark .daily-card,
+.theme-dark .city-card {
+  border-color: #2d3b3f;
+  background: #192529;
+}
+
+.theme-dark .condition-badge,
+.theme-dark .hour-current {
+  background: #203b38;
+  color: #88d7c2;
+}
+
+.theme-dark .condition-row {
+  border-bottom-color: #2b393d;
+}
+
+.theme-dark .condition-name,
+.theme-dark .daily-day,
+.theme-dark .hour-time {
+  color: #9eacab;
+}
+
+.theme-dark .condition-row strong,
+.theme-dark .hour-temp,
+.theme-dark .daily-range strong,
+.theme-dark .city-name,
+.theme-dark .city-temp {
+  color: #e0e9e7;
+}
+
+.theme-dark .condition-row strong small,
+.theme-dark .condition-note,
+.theme-dark .daily-range > span,
+.theme-dark .city-country,
+.theme-dark .city-condition,
+.theme-dark .hourly-empty {
+  color: #9aa8a8;
+}
+
+.theme-dark .hour-item {
+  border-right-color: #2b393d;
+}
+
+.theme-dark .hour-current .hour-time,
+.theme-dark .daily-item:first-child .daily-day {
+  color: #85d6c2;
+}
+
+.theme-dark .daily-item {
+  border-right-color: #2b393d;
+}
+
+.theme-dark .city-card:hover {
+  border-color: #4a766d;
+  box-shadow: 0 7px 17px rgba(0, 0, 0, .2);
+}
+
+.theme-dark .city-card.city-selected {
+  border-color: #4b9a89;
+  box-shadow: inset 0 0 0 1px rgba(90, 186, 163, .16);
+}
+
+.theme-dark .city-selected .city-select-indicator,
+.theme-dark .refresh-button > span {
+  color: #85d6c2;
+}
+
+.theme-dark .page-footer {
+  border-top-color: #2a383c;
+  color: #9aa8a8;
+}
+
 @media (min-width: 1600px) {
   .main-content {
     margin-right: auto;
@@ -1072,6 +1296,14 @@ h2 {
   }
 
   .top-date {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 8px;
+  }
+
+  .theme-toggle-label {
     display: none;
   }
 
